@@ -46,4 +46,13 @@ public class ItemsController {
 		List<Items> likeItems = itemsService.searchLikeItems(itemsVo);
 		return "success";
 	}
+	
+	@RequestMapping("/deleteAll")
+	public String deleteAll(ItemsVo itemsVo) throws Exception{
+		Integer[] ids = itemsVo.getIds();
+		for (Integer id : ids) {
+			System.out.println(id);
+		}
+		return "success";
+	}
 }

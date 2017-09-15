@@ -9,19 +9,20 @@
 <title>查询商品列表</title>
 </head>
 <body> 
-<form action="${pageContext.request.contextPath }/search.action" method="post">
+<form action="${pageContext.request.contextPath }/deleteAll.action" method="post">
 查询条件：
 <table width="100%" border=1>
 <tr>
 <!-- 如果Controller中接收的是Vo,那么页面上input框的name属性值要等于vo的属性.属性.属性..... -->
 <td>商品名称:<input type="text" name="items.name"/></td>
 <td>商品价格:<input type="text" name="items.price"/></td>
-<td><input type="submit" value="查询"/></td>
+<td><input type="submit" value="批量删除"/></td>
 </tr>
 </table>
 商品列表：
 <table width="100%" border=1>
 <tr>
+	<td><input type="checkbox"/></td>
 	<td>商品名称</td>
 	<td>商品价格</td>
 	<td>生产日期</td>
@@ -30,6 +31,7 @@
 </tr>
 <c:forEach items="${itemList }" var="item">
 <tr>
+	<td><input type="checkbox" name="ids" value="${item.id}"/></td>
 	<td>${item.name }</td>
 	<td>${item.price }</td>
 	<td><fmt:formatDate value="${item.createtime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
