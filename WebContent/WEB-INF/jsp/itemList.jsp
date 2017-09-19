@@ -39,6 +39,7 @@
 		<table width="100%"   class="table table-bordered">
 			<tr class="warning">
 				<td><input type="checkbox" /></td>
+				<td>商品图片</td>
 				<td>商品名称</td>
 				<td>商品价格</td>
 				<td>生产日期</td>
@@ -48,6 +49,7 @@
 			<c:forEach items="${itemList }" var="item">
 				<tr class="success">
 					<td><input type="checkbox" name="ids" value="${item.id}" /></td>
+					<td><img src="/pic/e65967e9-3b96-4aa9-a301-837e8e465893.png" width=100 height=100/></td>
 					<td>${item.name }</td>
 					<td>${item.price }</td>
 					<td><fmt:formatDate value="${item.createtime}"
